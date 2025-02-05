@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 //import { inter } from './ui/fonts';
 import './ui/global.css';
 
