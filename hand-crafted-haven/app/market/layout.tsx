@@ -1,5 +1,5 @@
 import SideNav from '../ui/sidenav';
-import { inter } from '../ui/fonts';
+//import { inter } from '../ui/fonts';
 import '../ui/global.css';
 
 export default function Layout({children,}: {children: React.ReactNode;}) {
