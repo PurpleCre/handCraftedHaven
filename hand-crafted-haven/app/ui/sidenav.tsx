@@ -1,5 +1,6 @@
 //import Link from 'next/link';
 import NavLinks from './nav-links';
+import { signOut } from '@/auth';
 
 
 export default function SideNav() {
@@ -9,6 +10,16 @@ export default function SideNav() {
       <div className="haven-logo">Placeholder for Logo</div>
         <NavLinks />
         <div className="sidenav-layout"></div>
+        <form
+          action={async () => {
+            'use server';
+            await signOut({ redirectTo: '/' });
+          }}
+        >
+          <button className="signout">
+            <div className="hidden">Sign Out</div>
+          </button>
+        </form>
       </div>
     </div>
   );

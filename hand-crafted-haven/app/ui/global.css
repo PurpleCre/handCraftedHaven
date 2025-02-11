@@ -206,6 +206,14 @@ button:hover {cursor: pointer;}
 
 .buttons a:not(:last-child), .buttons button:not(:last-child) {margin-bottom: 10px;}
 
+.signout {
+  padding: 5px 10px;
+  float: right;
+  border-radius: 5px;
+  background: #d15c41;
+  color: #fff;
+}
+
 @media (min-width: 700px) {
   .home-layout {
     flex-direction: row;
