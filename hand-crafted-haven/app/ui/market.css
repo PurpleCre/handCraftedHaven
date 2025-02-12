@@ -1,0 +1,44 @@
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .image-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .image-gallery img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .image-gallery button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .image-gallery button:first-of-type {
+    left: 10px;
+  }
+  
+  .image-gallery button:last-of-type {
+    right: 10px;
+  }
+  

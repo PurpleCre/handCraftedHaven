@@ -1,30 +1,19 @@
-import { Metadata } from 'next';
- 
-export const metadata: Metadata = {
-  title: 'Home',
-};
+import { getProducts } from "@/app/lib/queries";
+import { Product } from "@/app/lib/definitions";
+import ProductCard from "@/app/ui/market/ProductCard";
+import "@/app/ui/market.css";
 
-export default function Page() {
-    return (
-      <>
-        <h1>Home Page</h1>
-        <div className='items'> 
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-          <div className='placeholder'>Placeholder for items</div>
-        </div>
-      </>
-    ); // placeholers will be replaced with actual contents and react code later.
+export default async function Page() {
+  const products: Product[] = await getProducts();
+
+  return (
+    <>
+      <h1>Marketplace</h1>
+      <div className="items">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </>
+  );
 }

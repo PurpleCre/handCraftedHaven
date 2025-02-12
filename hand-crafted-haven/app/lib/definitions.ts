@@ -6,3 +6,11 @@ export type User = {
     email: string;
     role: string;
 };
+export type Product = {
+    id: string;
+    product_name: string;
+    description: string;
+    price: number;
+    images: string[];
+  };
+  
