@@ -5,11 +5,11 @@ import "@/app/ui/market.css";
 import "@/app/ui/pagination.css";
 
 export default async function Page({ searchParams }: { searchParams: { page?: string; search?: string } }) {
+  const params = await searchParams
   const pageSize = 10;
-  const currentPage = Number(searchParams.page) || 1;
-  console.log(searchParams.page)
+  const currentPage = Number(params.page) || 1;
   // Fetch products and total count
-  const { products, totalProducts } = await getProducts(searchParams);
+  const { products, totalProducts } = await getProducts(params);
   const totalPages = Math.ceil(totalProducts / pageSize);
 
   return (
