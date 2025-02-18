@@ -1,5 +1,4 @@
 import { getProducts } from "@/app/lib/queries";
-import { Product } from "@/app/lib/definitions";
 import ProductCard from "@/app/ui/market/ProductCard";
 import Search from "@/app/ui/market/Search";
 import "@/app/ui/market.css";

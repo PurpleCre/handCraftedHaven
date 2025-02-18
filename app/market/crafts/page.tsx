@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import {getSingleProduct} from "@/app/lib/queries";
 import ProductDetail from '@/app/ui/market/ProductDetail';
-import { Product } from '@/app/lib/definitions';
 import "@/app/ui/global.css";
 import "@/app/ui/market.css";
 import "@/app/ui/product.css";
