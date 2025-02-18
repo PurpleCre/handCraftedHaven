@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Product } from "@/app/lib/definitions";
+import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -18,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
         {images.length > 0 ? (
           <>
             <button onClick={prevImage}>&lt;</button>
-            <img src={images[currentImage]} alt={product.product_name} />
+            <Image src={images[currentImage]} alt={product.product_name} width={200} height={180} />
             <button onClick={nextImage}>&gt;</button>
           </>
         ) : (
