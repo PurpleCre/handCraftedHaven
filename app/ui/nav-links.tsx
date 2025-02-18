@@ -13,8 +13,6 @@ import Link from 'next/link';
 // Depending on the size of the application, this would be stored in a database.
 const links = [
   { name: 'Home', href: '/market' },
-  {name: 'Crafts', href: '/market/crafts'
-  },
   { name: 'User Page', href: '/market/user' },
 ];
 

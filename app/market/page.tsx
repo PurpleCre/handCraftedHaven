@@ -8,7 +8,7 @@ import "@/app/ui/pagination.css";
 export default async function Page({ searchParams }: { searchParams: { page?: string; search?: string } }) {
   const pageSize = 10;
   const currentPage = Number(searchParams.page) || 1;
-  
+  console.log(searchParams.page)
   // Fetch products and total count
   const { products, totalProducts } = await getProducts(searchParams);
   const totalPages = Math.ceil(totalProducts / pageSize);

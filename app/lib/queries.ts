@@ -1,5 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { Product } from "@/app/lib/definitions";
+import ProductCard from "../ui/market/ProductCard";
 
 export async function getProducts(searchParams: { page?: string; search?: string }) {
   const pageSize = 10;
@@ -27,4 +28,16 @@ export async function getProducts(searchParams: { page?: string; search?: string
     })),
     totalProducts,
   };
+}
+
+export async function getSingleProduct(searchParams: { productId?: string}) {
+  const productId = await searchParams.productId
+  const result = await sql<Product>`
+    SELECT *
+    FROM products
+    WHERE id = ${productId}
+  `;
+  const product = result.rows[0]
+  return product
+
 }
