@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import "@/app/ui/search.css";
 
 export default function Search() {
   const router = useRouter();
