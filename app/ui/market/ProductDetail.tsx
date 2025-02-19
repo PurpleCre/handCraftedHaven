@@ -1,6 +1,7 @@
 "use client"; 
 import { useState } from "react";
 import { Product } from "@/app/lib/definitions";
+import Image from "next/image";
 
 export default function ProductDetail({ product }: { product: Product }) {
     const [currentImage, setCurrentImage] = useState(0);
@@ -15,7 +16,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                 {images.length > 0 ? (
                 <>
                     <button onClick={prevImage}>&lt;</button>
-                    <img src={images[currentImage]} alt={product.product_name} />
+                    <Image src={images[currentImage]} alt={product.product_name} />
                     <button onClick={nextImage}>&gt;</button>
                 </>
                 ) : (
