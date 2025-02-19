@@ -14,4 +14,3 @@ export type Product = {
     images: string[];
     user_id: string;
   };
-  
