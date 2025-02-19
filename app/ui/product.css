@@ -1,0 +1,30 @@
+h1 {
+    margin-bottom: 2rem;
+}
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.product-detail-info hr{
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.product-detail-price {
+    font-size: 1.5rem;
+}
+
+.product-detail-info h2, .product-detail-info p {
+    margin-left: 10px;
+}
+
+
+@media (max-width: 1150px) {
+    .product-detail-layout{
+        grid-template-columns: 1fr;
+    }
+}
