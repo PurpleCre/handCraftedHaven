@@ -1,16 +1,15 @@
 import { getProducts } from "@/app/lib/queries";
-// import { Product } from "@/app/lib/definitions";
 import ProductCard from "@/app/ui/market/ProductCard";
 import Search from "@/app/ui/market/Search";
 import "@/app/ui/market.css";
 import "@/app/ui/pagination.css";
 
 export default async function Page({ searchParams }: { searchParams: { page?: string; search?: string } }) {
+  const params = await searchParams
   const pageSize = 10;
-  const currentPage = Number(searchParams.page) || 1;
-  
+  const currentPage = Number(params.page) || 1;
   // Fetch products and total count
-  const { products, totalProducts } = await getProducts(searchParams);
+  const { products, totalProducts } = await getProducts(params);
   const totalPages = Math.ceil(totalProducts / pageSize);
 
   return (

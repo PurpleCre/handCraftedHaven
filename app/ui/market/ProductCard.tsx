@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function ProductCard({ product }: { product: Product }) {
   const [currentImage, setCurrentImage] = useState(0);
   const images = product.images || [];
+  const url = "/market/crafts?productId=" + product.id;
 
   const nextImage = () => {
     if (images.length > 0) {
@@ -22,8 +23,10 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="item">
-      <h2>{product.product_name}</h2>
-      <p>{product.description}</p>
+      <a href={url}>
+        <h2>{product.product_name}</h2>
+        <p>{product.description}</p>
+      </a>
       <div className="image-gallery">
         {images.length > 0 ? (
           <>
