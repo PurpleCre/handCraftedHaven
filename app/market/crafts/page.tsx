@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({ searchParams }: { searchParams: { productId?: string}}) {
-  const params = await searchParams
-  const product = await getSingleProduct(params)
+  const product = await getSingleProduct(searchParams)
 
   return (
     <>
