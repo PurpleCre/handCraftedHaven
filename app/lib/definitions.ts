@@ -13,4 +13,4 @@ export type Product = {
     price: number;
     images: string[];
     user_id: string;
-  };
+};

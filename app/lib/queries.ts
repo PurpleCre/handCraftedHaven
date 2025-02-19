@@ -1,11 +1,12 @@
 import { sql } from "@vercel/postgres";
 import { Product } from "@/app/lib/definitions";
 
-export async function getProducts(searchParams: { page?: string; search?: string }) {
+
+export async function getProducts(params?: { page?: string; search?: string }) {
   const pageSize = 10;
-  const currentPage = Number(searchParams.page) || 1;
+  const currentPage = Number(params?.page) || 1;
   const offset = (currentPage - 1) * pageSize;
-  const searchQuery = searchParams.search ? `%${searchParams.search}%` : "%";
+  const searchQuery = params?.search ? `%${params?.search}%` : "%";
 
   // Fetch paginated products
   const result = await sql<Product>`
@@ -29,8 +30,7 @@ export async function getProducts(searchParams: { page?: string; search?: string
   };
 }
 
-export async function getSingleProduct(searchParams: { productId?: string}) {
-  const productId = await searchParams.productId
+export async function getSingleProduct(productId?: string) {
   const result = await sql<Product>`
     SELECT *
     FROM products

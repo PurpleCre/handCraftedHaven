@@ -1,9 +1,11 @@
-"use client"; 
-import { useState } from "react";
-import { Product } from "@/app/lib/definitions";
-import Image from "next/image";
+"use client"
 
-export default function ProductDetail({ product }: { product: Product }) {
+import { useState } from "react";
+import Image from "next/image";
+import { Product } from "@/app/lib/definitions";
+
+export default function ProductDetail(productDetail :{productDetail: Product}) {
+    const product = productDetail.productDetail;
     const [currentImage, setCurrentImage] = useState(0);
     const images = product.images || [];
   
@@ -16,7 +18,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                 {images.length > 0 ? (
                 <>
                     <button onClick={prevImage}>&lt;</button>
-                    <Image src={images[currentImage]} alt={product.product_name} width={380} height={0} style={{height: 'auto' }} />
+                    <Image src={images[currentImage]} alt={"product image"} width={380} height={0} style={{height: 'auto' }} />
                     <button onClick={nextImage}>&gt;</button>
                 </>
                 ) : (
@@ -24,10 +26,10 @@ export default function ProductDetail({ product }: { product: Product }) {
                 )}
             </div>
             <div className="product-detail-info">
-                <h2>{product.product_name}</h2>
-                <p>{product.description}</p>
+                <h2>{product?.product_name}</h2>
+                <p>{product?.description}</p>
                 <hr />
-                <p className="product-detail-price">${product.price}</p>
+                <p className="product-detail-price">${product?.price}</p>
             </div>
       </div>
     )
