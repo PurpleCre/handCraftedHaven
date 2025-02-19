@@ -8,8 +8,17 @@ export default function ProductCard({ product }: { product: Product }) {
   const [currentImage, setCurrentImage] = useState(0);
   const images = product.images || [];
 
-  const nextImage = () => setCurrentImage((prev) => (prev + 1) % images.length);
-  const prevImage = () => setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  const nextImage = () => {
+    if (images.length > 0) {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (images.length > 0) {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
 
   return (
     <div className="item">
@@ -19,7 +28,13 @@ export default function ProductCard({ product }: { product: Product }) {
         {images.length > 0 ? (
           <>
             <button onClick={prevImage}>&lt;</button>
-            <Image src={images[currentImage]} alt={product.product_name} width={200} height={180} />
+            <Image 
+              src={images[currentImage]}  
+              alt={product.product_name}  
+              width={200}  
+              height={200}  
+              priority
+            />
             <button onClick={nextImage}>&gt;</button>
           </>
         ) : (
