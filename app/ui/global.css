@@ -180,6 +180,17 @@ a {
   border-radius: 5px;
 }
 
+.input-div textarea {
+  min-height: 150px;
+  min-width: 300px;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border: 1px solid #eccece;
+  border-radius: 5px;
+  field-sizing: content;
+}
+
 .error-block {
   color: #f73131;
   font-size: 12px;
@@ -263,7 +274,8 @@ button:hover {cursor: pointer;}
     display: block;
   } */
 
-  .input-div input {min-width: 400px;}
+  .input-div input, .input-div textarea
+   {min-width: 400px;}
   .buttons a:not(:last-child), .buttons button:not(:last-child) {margin-right: 10px;}
   .buttons a, .buttons button {display: inline-block;}
 
