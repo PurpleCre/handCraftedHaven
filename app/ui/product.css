@@ -22,6 +22,13 @@ h1 {
     margin-left: 10px;
 }
 
+.product-detail-info .image-gallery {
+    width: 400px;
+    max-width: 400px;
+    height: auto;
+
+}
+
 
 @media (max-width: 1150px) {
     .product-detail-layout{

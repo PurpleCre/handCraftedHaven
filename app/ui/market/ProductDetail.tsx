@@ -16,7 +16,7 @@ export default function ProductDetail({ product }: { product: Product }) {
                 {images.length > 0 ? (
                 <>
                     <button onClick={prevImage}>&lt;</button>
-                    <Image src={images[currentImage]} alt={product.product_name} />
+                    <Image src={images[currentImage]} alt={product.product_name} width={380} height={0} style={{height: 'auto' }} />
                     <button onClick={nextImage}>&gt;</button>
                 </>
                 ) : (
