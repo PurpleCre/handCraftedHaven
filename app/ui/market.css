@@ -42,3 +42,8 @@
     right: 10px;
   }
   
+  .add-product-button a{
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+  }
