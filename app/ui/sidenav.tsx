@@ -1,13 +1,14 @@
 //import Link from 'next/link';
 import NavLinks from './nav-links';
 import { signOut } from '@/auth';
+import HCLogo from './hc-logo';
 
 
 export default function SideNav() {
   return (
     <div className="sidenav-frame">
       <div className="nav-links">
-      <div className="haven-logo">Placeholder for Logo</div>
+      <div className="haven-logo"><HCLogo /></div>
         <NavLinks />
         <div className="sidenav-layout"></div>
         <form
