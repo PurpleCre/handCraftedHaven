@@ -67,6 +67,7 @@ a {
 
 .enter-button {
   padding-top: 3rem;
+  padding: 10px;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -114,10 +115,8 @@ a {
 }
 
 .haven-logo {
-  height: 150px;
   width: 100%;
   border-radius: 0.375rem;
-  background-color: #93c3f3;
 
 }
 
@@ -223,6 +222,10 @@ button:hover {cursor: pointer;}
   border-radius: 5px;
   background: #d15c41;
   color: #fff;
+}
+
+.product-detail {
+  margin-bottom: 60px;
 }
 
 @media (min-width: 700px) {

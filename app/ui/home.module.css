@@ -1,0 +1,36 @@
+.shape {
+    height: 0;
+    width: 0;
+    border-bottom: 30px solid black;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+  }
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content:space-around;
+  width: 80px;
+  flex-grow: none;
+  color: blueviolet;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content:space-around;
+  width: 80px;
+  flex-grow: none;
+  padding-top: 20px;
+  margin: 0 auto;
+  font-size: 20px;
+  color: grey;
+}
+
+.responsive {
+  aspect-ratio: 2/1;
+}
