@@ -225,6 +225,10 @@ button:hover {cursor: pointer;}
   color: #fff;
 }
 
+.product-detail {
+  margin-bottom: 60px;
+}
+
 @media (min-width: 700px) {
   .home-layout {
     flex-direction: row;
