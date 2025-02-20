@@ -58,6 +58,7 @@ export async function getUserInformation(userId?: string){
   WHERE id = ${userId}`;
   const user =  result.rows[0];
   return user;
+}
 
 export async function getReviews(productId: string) {
 
