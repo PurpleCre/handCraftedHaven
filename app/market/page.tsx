@@ -18,7 +18,7 @@ export default async function Page(props: { searchParams?: Promise<{ page?: stri
   return (
     <>
       <h1>Marketplace</h1>
-      <Search placeholder="Search invoices..." />
+      <Search placeholder="Search products..." />
       <div className="items">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
