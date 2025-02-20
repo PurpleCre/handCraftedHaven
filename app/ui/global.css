@@ -212,6 +212,13 @@ button:hover {cursor: pointer;}
 
 .buttons a {background: #d15c41;}
 
+.buttons.market a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: #22e55e;
+}
+
 .buttons {margin-top: 30px;}
 
 .buttons a:not(:last-child), .buttons button:not(:last-child) {margin-bottom: 10px;}

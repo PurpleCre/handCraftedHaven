@@ -4,6 +4,7 @@ import ProductCard from "@/app/ui/market/ProductCard";
 import Search from "@/app/ui/market/Search";
 import "@/app/ui/market.css";
 import "@/app/ui/pagination.css";
+import Link from "next/link";
 
 export default async function Page(props: { searchParams?: Promise<{ page?: string; search?: string }> }) {
   const params = await props.searchParams;
@@ -40,6 +41,9 @@ export default async function Page(props: { searchParams?: Promise<{ page?: stri
         ))}
 
         {currentPage < totalPages && <a href={`?page=${currentPage + 1}`}>Next</a>}
+      </div>
+      <div className="buttons market">
+          <Link href="/market/create">Add a Product</Link>
       </div>
     </>
   );
