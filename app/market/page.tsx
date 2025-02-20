@@ -2,6 +2,7 @@ import { getProducts } from "@/app/lib/queries";
 // import { Product } from "@/app/lib/definitions";
 import ProductCard from "@/app/ui/market/ProductCard";
 import Search from "@/app/ui/market/Search";
+import Link from "next/link";
 import "@/app/ui/market.css";
 import "@/app/ui/pagination.css";
 import "@/app/ui/market/search.css";
@@ -41,6 +42,9 @@ export default async function Page(props: { searchParams?: Promise<{ page?: stri
         ))}
 
         {currentPage < totalPages && <a href={`?page=${currentPage + 1}`}>Next</a>}
+      </div>
+      <div className="buttons market">
+          <Link href="/market/create">Add a Product</Link>
       </div>
     </>
   );

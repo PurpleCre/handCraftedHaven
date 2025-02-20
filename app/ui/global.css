@@ -152,6 +152,12 @@ a {
 /* .navlink-content {
   display: none;
 } */
+.buttons.market a {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  background: #22e55e;
+}
 
 .items {
   display: grid;
