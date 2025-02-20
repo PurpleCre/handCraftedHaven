@@ -4,6 +4,7 @@ import { Button } from './button';
 import { useActionState } from 'react';
 import { authenticate } from '@/app/lib/actions';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const searchParams = useSearchParams();
@@ -59,6 +60,7 @@ export default function LoginForm() {
           <Button className="mt-4 w-full" aria-disabled={isPending}>
             Log in
           </Button>
+          <Link href="/user/create">Create An Account</Link>
         </div>
         <div
           className="error-block"

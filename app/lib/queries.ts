@@ -59,6 +59,6 @@ export async function getReviews(productId: string) {
     INNER JOIN users u ON r.user_id = u.id
     WHERE r.product_id = ${productId};
   `;
-  console.log('result:', result.rows)
+
   return result.rows.length > 0 ? (result.rows as Review[]) : [];
 }
