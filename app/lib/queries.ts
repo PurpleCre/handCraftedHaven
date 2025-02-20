@@ -41,6 +41,7 @@ export async function getSingleProduct(productId?: string) {
 
 }
 
+
 export async function getUserProducts(userId?: string){
   const result = await sql<Product>`
   SELECT *
@@ -57,4 +58,26 @@ export async function getUserInformation(userId?: string){
   WHERE id = ${userId}`;
   const user =  result.rows[0];
   return user;
+
+export async function getReviews(productId: string) {
+
+  interface Review {
+    rating: number;
+    comment: string;
+    full_name: string;
+  }
+
+  if (!productId) {
+    throw new Error("Product ID is required");
+  }
+
+  const result = await sql`
+    SELECT r.rating, r.comment, u.full_name
+    FROM reviews r
+    INNER JOIN users u ON r.user_id = u.id
+    WHERE r.product_id = ${productId};
+  `;
+
+  return result.rows.length > 0 ? (result.rows as Review[]) : [];
+
 }
