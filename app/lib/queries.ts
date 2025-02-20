@@ -80,5 +80,22 @@ export async function getReviews(productId: string) {
   `;
 
   return result.rows.length > 0 ? (result.rows as Review[]) : [];
+}
 
+export async function getUserProducts(userId?: string){
+  const result = await sql<Product>`
+  SELECT *
+  FROM products
+  WHERE user_id = ${userId}
+`;
+return result.rows
+}
+
+export async function getUserInformation(userId?: string){
+  const result = await sql<User>`
+  SELECT *
+  FROM users
+  WHERE id = ${userId}`;
+  const user =  result.rows[0];
+  return user;
 }
