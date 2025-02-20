@@ -1,34 +1,41 @@
-"use client";
-
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import "@/app/ui/search.css";
-
-export default function Search() {
-  const router = useRouter();
+'use client';
+ 
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
+ 
+export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("search") || "");
-
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+ 
+  const handleSearch = useDebouncedCallback((term) => {
+    console.log(`Searching... ${term}`);
+ 
     const params = new URLSearchParams(searchParams);
-    if (query) {
-      params.set("search", query);
+    params.set('page', '1');
+    if (term) {
+      params.set('search', term); // ✅ Change 'query' → 'search'
     } else {
-      params.delete("search");
+      params.delete('search');
     }
-    router.push(`/market?${params.toString()}`);
-  };
-
+    replace(`${pathname}?${params.toString()}`);
+  }, 300);
+ 
   return (
-    <form onSubmit={handleSearch}>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search products..."
+<div className="search-container">
+<label htmlFor="search" className="sr-only">
+        Search
+</label>
+<input
+        className="search-input"
+        placeholder={placeholder}
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }}
+        defaultValue={searchParams.get('search')?.toString()}
       />
-      <button type="submit">Search</button>
-    </form>
+<MagnifyingGlassIcon className="search-icon" />
+</div>
   );
 }

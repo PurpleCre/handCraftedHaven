@@ -1,0 +1,41 @@
+.flexq {
+    display: flex;
+    align-items: center;
+     height: 16px;
+     padding: 1rem;
+    outline: 1px solid black;
+  }
+  
+  .inputs {
+    width: 240px;
+    padding: 1rem;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1rem;
+    border: 1px dashed black;
+  }
+  label {
+    padding: 1rem;
+  }
+  .inputs:focus {
+    border-color: #007bff;
+  }
+  
+  .MagnifyingGlassIcon {
+    width: 24px;
+    height: 24px;
+    margin-left: -32px; /* Adjust based on your input padding */
+    cursor: pointer;
+  }
+  svg.search-icon {
+    width: 20px;
+    position: relative;
+    left: 1rem;
+}
+input.search-input {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    font-size: 1rem;
+    width: 400px;
+}
