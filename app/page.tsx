@@ -6,7 +6,6 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Hand Crafted Haven',
 };
-
  
 export default async function Page() {
   return (

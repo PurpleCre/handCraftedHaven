@@ -1,23 +1,23 @@
-import './ui/global.css';
+import '@/app/ui/global.css';
+import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
-
+ 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Hand Crafted Haven Dashboard',
-    default: 'Hand Crafted Haven Dashboard',
+    template: '%s | Hand Crafted Haven',
+    default: 'Hand Crafted Haven',
   },
-  description: 'The official Next.js Learn Dashboard built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  icons: {
+    icon: "/favicon.ico", 
+  },
+  description: 'Give a hand and buy now, sell later.',
+  metadataBase: new URL('https://hand-crafted-haven.vercel.app/'),
 };
 
 export default function RootLayout({children,}: {children: React.ReactNode;}) {
   return (
     <html lang="en">
-      <body>
-        <div className="home-layout">
-          <div className="home-content">{children}</div>
-        </div>
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
