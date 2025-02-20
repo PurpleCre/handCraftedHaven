@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     template: '%s | Hand Crafted Haven',
     default: 'Hand Crafted Haven',
   },
+  icons: {
+    icon: "/favicon.ico", 
+  },
   description: 'Give a hand and buy now, sell later.',
   metadataBase: new URL('https://hand-crafted-haven.vercel.app/'),
 };
