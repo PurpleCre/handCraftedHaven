@@ -17,7 +17,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Deploy on Vercel
 
-[hand-crafted-haven vercel deploy](https://hand-crafted-haven-eflp.vercel.app/)
+[hand-crafted-haven vercel deploy](https://hand-crafted-haven.vercel.app/)
 
 ## Members
 
